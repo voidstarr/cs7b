@@ -1,0 +1,10 @@
+1 size declarator
+2 const int; 0
+3 subscript
+4 0
+5 size declarator; subscript
+6 bounds
+7 initialization
+8 0, in some cases
+9 initialization list
+10 a: 5; b: doubles
