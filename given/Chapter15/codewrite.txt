@@ -1,0 +1,17 @@
+
+class SheepDog:public Dog
+{
+private:
+   int numberSheep;
+public:
+   SheepDog(double w, int nSheep) : Dog(w)
+   {
+      numberSheep = nSheep;
+   }
+   virtual void bark() const override
+   {
+      cout << "I am a sheepdog weighing "
+           << weight << " pounds \n and guarding "
+           << numberSheep << " sheep." << endl;
+   }
+};
