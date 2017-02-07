@@ -10,11 +10,11 @@ bld () {
     fi
 
     TO_COMP=`find . -name '*.cpp' | xargs`
-    clang++-3.8 -std=c++14 -o $1 $TO_COMP
+    clang++-4.0 -std=c++14 -o $1 $TO_COMP
 }
 
 fmt () {
-    clang-format-3.8 $1 > /tmp/proj-fom-tmp
+    clang-format-4.0 $1 > /tmp/proj-fom-tmp
     mv /tmp/proj-fom-tmp $1
 }
 

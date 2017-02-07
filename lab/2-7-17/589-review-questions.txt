@@ -1,0 +1,22 @@
+1 size declarator
+2 const int; 0
+3 subscript
+4 0
+5 size declarator; subscript
+6 bounds
+7 initialization
+8 0, in some cases
+9 initialization list
+10 a: 5; b: doubles
+11 number of elements
+12 assignment
+13 value
+14 name
+15 multi-dimensional
+16 rows and columns
+17 two
+18 braces
+19 columns
+20 reference
+21 a) 10 b) 0 c) 40 bytes
+22 2 14 8\n

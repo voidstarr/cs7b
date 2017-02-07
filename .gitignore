@@ -1,2 +1,6 @@
 *.swp
 bin
+Debug
+.cproject
+.settings
+.project
