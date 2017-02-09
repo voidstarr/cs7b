@@ -1,5 +1,5 @@
 #include "heading.h"
 
-Header::printReport(int w) {
+void Heading::printReport(int w) {
     
 }

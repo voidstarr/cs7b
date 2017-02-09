@@ -8,11 +8,11 @@
 
 int main() {
 
-    Header abc();
+    Heading abc;
     abc.printReport(ONE_LINE);
     abc.printReport(FOUR_LINE);
 
-    Header bigBoss("Big Boss LCC", "Mainframe Status");
+    Heading bigBoss("Big Boss LCC", "Mainframe Status");
     bigBoss.printReport(ONE_LINE);
     bigBoss.printReport(FOUR_LINE);
     return 0;
