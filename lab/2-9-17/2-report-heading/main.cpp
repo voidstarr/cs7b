@@ -19,14 +19,9 @@ int main() {
   width = w.ws_col;
   // ---------------------
 
-  // Heading abc;
-  // abc.setWidth(width);
-  // abc.printReport(ONE_LINE);
-  // abc.printReport(FOUR_LINE);
-
   std::string comp;
   std::string rep;
-  
+
   Heading h = createHeading();
 
   h.setWidth(width);
