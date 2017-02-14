@@ -1,0 +1,10 @@
+1. abstract data type
+2. B
+3. procedural / oop
+4. procedural / oop
+5. data / procedures
+6. instance
+7. instantiating
+8. C
+9. 
+10. 
