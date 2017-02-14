@@ -7,9 +7,9 @@ class Car {
         int speed;
     public:
         Car(int y, std::string m): year(y), make(m), speed(0) {}
-        int getYear() {return year;}
-        std::string getMake() {return make;}
-        int getSpeed() {return speed;}
+        int getYear() const {return year;}
+        std::string getMake() const {return make;}
+        int getSpeed() const {return speed;}
         void accelerate() {speed += 5;}
         void brake() {speed -= 5;}
 };
