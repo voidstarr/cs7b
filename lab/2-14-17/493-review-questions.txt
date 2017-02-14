@@ -1,0 +1,10 @@
+11. encapsulation
+12. a) anyone b) only members of same class
+13. a) data elements b) procedures
+14. getter
+15. setter
+16. inline
+17. class
+18. instanciated
+19. return
+20. default
