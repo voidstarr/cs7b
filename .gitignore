@@ -1,6 +1,7 @@
 *.swp
 bin
 Debug
-!/.cproject
-!/.settings
-!/.project
+.cproject
+.settings
+.project
+!/.metadata
