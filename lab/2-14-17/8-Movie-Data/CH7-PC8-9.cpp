@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -22,20 +23,10 @@ void printMovie(MovieData& movie);
 
 int main()
 {
-	MovieData brandonBlackd;
-	brandonBlackd.Title = "Brondon gets BLACKD!!!!!!!!!";
-	brandonBlackd.Director = "Big Dick Mike";
-	brandonBlackd.Year = 2016;
-	brandonBlackd.runningTime = 2048;
-	brandonBlackd.productionCosts = 1;
-	brandonBlackd.firstRevenue = -2000000;
-
 	MovieData silentChris = { "Silent Chris", "Quentin Tarantino", 2018,260, 24000000, 1000000000};
 
 	MovieData Shawshank = { "The Shawshank Redemption", "Frank Darabont", 1994, 142, 25000000, 28233104 };
 
-	printMovie(brandonBlackd);
-	cout << endl;
 	printMovie(silentChris);
 	cout << endl;
 	printMovie(Shawshank);
