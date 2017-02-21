@@ -2,6 +2,7 @@
 
 void printArray(std::string[], int);
 void selectionSort(std::string[], int);
+int binarySearch(const std::string[], int, std::string);
 
 int main() {
   const int SIZE = 20;
@@ -20,6 +21,17 @@ int main() {
   std::cout << "sorted:" << std::endl;
 
   printArray(name, SIZE);
+
+  std::string searchName;
+  std::cout << "enter name for which to search: ";
+  std::getline(std::cin, searchName);
+  int idx = binarySearch(name, SIZE, searchName);
+
+  if (idx > -1)
+    std::cout << "Found " << searchName << " at idx(" << idx << ")" << std::endl;
+  else
+     std::cout << "Unable to find " << searchName << "." << std::endl;
+
   return 0;
 }
 
@@ -49,4 +61,23 @@ void selectionSort(std::string array[], int NUM_NAMES) {
     array[minIndex] = array[startScan];
     array[startScan] = minValue;
   }
+}
+
+int binarySearch(const std::string arr[], int size, std::string val) {
+  int start = 0;
+  int end = size - 1;
+  int mid = -1;
+  bool found = false;
+
+  while (!found && start <= end) {
+    mid = (start + end) / 2;
+    if (arr[mid] == val) {
+      found = true;
+    } else if (arr[mid] < val) {
+      start = mid + 1;
+    } else {
+      end = mid - 1;
+    }
+  }
+  return found ? mid : -1;
 }
