@@ -41,6 +41,9 @@ void readRecords(std::string filename, std::vector<Record> &r) {
     while (std::getline(ifs, line)) {
       std::istringstream iss(line);
       iss >> first >> last >> number;
+      if (last.find(',') != std::string::npos) {
+        last = last.substr(0,last.size()-1);
+      }
       Record n(first, last, number);
       r.push_back(n);
     }
