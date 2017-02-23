@@ -2,14 +2,13 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <vector>
 #include <stdio.h>
+#include <vector>
 
 void readRecords(std::string, std::vector<Record> &);
 void sortRecords(std::vector<Record> &);
 void printRecords(std::vector<Record>);
 void writeRecords(std::string, std::string, std::vector<Record>);
-
 
 int main() {
   std::vector<Record> records;
@@ -22,7 +21,7 @@ int main() {
   std::cout << "Sorted:" << std::endl;
   printRecords(records);
 
-  writeRecords("temp.txt","numbers.txt", records);
+  writeRecords("temp.txt", "numbers.txt", records);
 
   return 0;
 }
@@ -44,7 +43,7 @@ void readRecords(std::string filename, std::vector<Record> &r) {
       std::istringstream iss(line);
       iss >> first >> last >> number;
       if (last.find(',') != std::string::npos) {
-        last = last.substr(0,last.size()-1);
+        last = last.substr(0, last.size() - 1);
       }
       Record n(first, last, number);
       r.push_back(n);
@@ -55,28 +54,29 @@ void readRecords(std::string filename, std::vector<Record> &r) {
   }
 }
 
-void writeRecords(std::string tmpfile,std::string rewrite, std::vector<Record> r) {
-    std::ofstream ofs(tmpfile);
-    if (ofs.good()) {
-        for (Record rc : r) {
-            ofs << rc << std::endl;
-        }
+void writeRecords(std::string tmpfile, std::string rewrite,
+                  std::vector<Record> r) {
+  std::ofstream ofs(tmpfile);
+  if (ofs.good()) {
+    for (Record rc : r) {
+      ofs << rc << std::endl;
     }
-    ofs.close();
+  }
+  ofs.close();
 
-    std::rename(tmpfile.c_str(), rewrite.c_str());
+  std::rename(tmpfile.c_str(), rewrite.c_str());
 }
 
 void sortRecords(std::vector<Record> &r) {
-    bool swapped = true;
-    int size = r.size() - 1;
-    while (swapped) {
-      swapped = false;
-      for (int i = 0; i < size; i++) {
-          if(r[i].getLastName() > r[i + 1].getLastName()) {
-          std::swap(r[i], r[i + 1]);
-          swapped = true;
-        }
+  bool swapped = true;
+  int size = r.size() - 1;
+  while (swapped) {
+    swapped = false;
+    for (int i = 0; i < size; i++) {
+      if (r[i].getLastName() > r[i + 1].getLastName()) {
+        std::swap(r[i], r[i + 1]);
+        swapped = true;
       }
     }
+  }
 }

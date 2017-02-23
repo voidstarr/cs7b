@@ -17,7 +17,6 @@ public:
 
   long int getPhoneNumber() const { return phoneNumber; }
   void setPhoneNumber(long int p) { phoneNumber = p; }
-
 };
 
 std::ostream &operator<<(std::ostream &os, const Record &r);
