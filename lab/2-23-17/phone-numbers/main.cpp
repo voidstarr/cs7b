@@ -14,10 +14,12 @@ void writeRecords(std::string, std::string, std::vector<Record>);
 int main() {
   std::vector<Record> records;
   readRecords("numbers.txt", records);
+  std::cout << "Unsorted:" << std::endl;
   printRecords(records);
 
   sortRecords(records);
 
+  std::cout << "Sorted:" << std::endl;
   printRecords(records);
 
   writeRecords("temp.txt","numbers.txt", records);
@@ -62,8 +64,7 @@ void writeRecords(std::string tmpfile,std::string rewrite, std::vector<Record> r
     }
     ofs.close();
 
-    int res = std::rename(tmpfile.c_str(), rewrite.c_str());
-    std::cout << res << std::endl;
+    std::rename(tmpfile.c_str(), rewrite.c_str());
 }
 
 void sortRecords(std::vector<Record> &r) {
