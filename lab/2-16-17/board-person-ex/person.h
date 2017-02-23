@@ -1,5 +1,7 @@
 #include <string>
 #include <ifstream>
+#include <ctime>
+#include <sstream>
 
 class Person {
     private:
