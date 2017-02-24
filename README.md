@@ -6,8 +6,8 @@ If you're here and you copy my code, beware that it may be incorrect.
 
 (Not to meantion that is plagiarism.)
 
+
+###to make use of some build/format fuctions
 ```
 source activate
 ```
-
-to make use of some build/format fuctions
