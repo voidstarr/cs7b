@@ -8,6 +8,7 @@ If you're here and you copy my code, beware that it may be incorrect.
 
 
 ###to make use of some build/format fuctions
+requires clang-format-4.0 and clang-4.0
 ```
 source activate
 ```
