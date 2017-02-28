@@ -27,10 +27,14 @@ int main()
 
 	MovieData Shawshank = { "The Shawshank Redemption", "Frank Darabont", 1994, 142, 25000000, 28233104 };
 
+    MovieData someMovie = { "Some Movie", "Some Director", 2004, 200, 3000000000, -3285847};
+
 	printMovie(silentChris);
 	cout << endl;
 	printMovie(Shawshank);
 	cout << endl;
+    printMovie(someMovie);
+    cout << endl;
 
 
 
@@ -71,4 +75,6 @@ void printMovie(MovieData& movie) {
 	else {
 		cout << "Production costs: " << movie.productionCosts <<" $" << endl;
 	}
+
+
 }
