@@ -1,0 +1,46 @@
+Ex 1)
+    P = sum of all integer values in a one dimmensional array
+
+    INPUT: int a[] of size n
+
+    SIZE OF INPUT: The number of array entries.
+
+    OUTPUT: int sum of all values of int sin array a
+    
+
+    algorithm
+        1: sum = 0
+        2: k = 0 // array index
+        3: while k < n do
+        4: sum = sum + a[k]
+        5: k = k + 1
+        6: end while
+
+    analysis: 
+        1,2 executed once <-- operation A
+        4,5 executed once each iteration <-- operation B
+
+        A = 1
+        B = n
+        total = n + 1
+
+        as n grows larger, 1 becomes insignificant so
+        complexity of this algorithm is n
+
+Ex 2) binary search
+    initialization of variables = 1
+    each iteration of the loop = 2L             
+    ##EOAS
+
+
+complexity (best to worst) :
+O(1)
+O(log base 2 of n)
+O(n)
+O(n log base 2 of n)
+O(n^2)
+O(c^n)
+O(n!)
+
+Travelling salesman problem: 
+    O(n^(2^2n))
