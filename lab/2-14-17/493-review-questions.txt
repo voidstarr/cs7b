@@ -1,10 +1,15 @@
 11. encapsulation
 12. a) anyone b) only members of same class
 13. a) data elements b) procedures
-14. getter
-15. setter
+14. getter (accessor)
+15. setter (mutator)
 16. inline
 17. class
 18. instanciated
 19. return
 20. default
+21. destroyed
+22. tilde (~)
+23. default
+24. parameters
+25. constructor/destructor
