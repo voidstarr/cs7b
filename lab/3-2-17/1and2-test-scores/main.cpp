@@ -4,17 +4,22 @@ void sortAsc(int *, int);
 float average(int *, int);
 void printScores(int *, int);
 
+struct Test {
+    std::string name;
+    int score;
+};
+
 int main() {
   int numScores;
   std::cout << "please enter number of test scores: ";
   std::cin >> numScores;
-  int *scores = new int[numScores];
+  Test *scores = new Test[numScores];
   for (int i = 0; i < numScores; i++) {
     std::cout << "score " << (i + 1) << ": ";
     std::cin >> *(scores + i);
     if (*(scores + i) < 0) {
       i--;
-      std::cout << "non-negative numbers pl0x!" << std::endl;
+      std::cout << "non-negative numbers!" << std::endl;
     }
   }
 
