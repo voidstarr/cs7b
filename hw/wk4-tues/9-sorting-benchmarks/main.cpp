@@ -19,22 +19,20 @@ int main() {
 }
 
 int selectionSort(int array[], int NUM_NAMES) {
-  int startScan, minIndex;
-  int minValue;
+  int i, minIndex;
   int ctr = 0;
 
-  for (startScan = 0; startScan < (NUM_NAMES - 1); startScan++) {
-    minIndex = startScan;
-    minValue = array[startScan];
-    for (int index = startScan + 1; index < NUM_NAMES; index++) {
-      if (array[index] < minValue) {
-        minValue = array[index];
-        minIndex = index;
+  for (i = 0; i < (NUM_NAMES - 1); i++) {
+    minIndex = i;
+    for (int j = i + 1; j < NUM_NAMES; j++) {
+      if (array[j] < array[minIndex]) {
+        minIndex = j;
         ctr++;
       }
     }
-    array[minIndex] = array[startScan];
-    array[startScan] = minValue;
+    if (i != minIndex) {
+        std::swap(array[minIndex], array[i]);
+    }
   }
   return ctr;
 }

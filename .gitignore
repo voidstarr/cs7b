@@ -1,7 +1,15 @@
 *.swp
 bin
 Debug
+
+#eclipse project files
+
 .cproject
 .settings
 .project
 !/.metadata
+
+#codeblocks project files
+*.cbp
+*.layout
+*.depend
