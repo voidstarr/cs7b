@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include <stdexcept>
+#include <cctype>
+#include <sstream>
+
 
 class DayOfYear {
     public:
@@ -14,7 +17,7 @@ class DayOfYear {
             this->month = m;
             int cm = -1;
             for(int i = 0; i < 12; i++)
-                if ((m) == (months[i]))
+                if (toLower(m) == toLower(months[i]))
                     cm = i;
             if (cm == -1)
                 throw std::invalid_argument("month must be valid!");
@@ -38,5 +41,8 @@ class DayOfYear {
         int doy;
         static std::string months[];
         static int daysInMonth[];
+        
+        static std::string toLower(std::basic_string<char>&);
+
 
 };

@@ -26,7 +26,7 @@ void DayOfYear::convert2DayOfYear() {
   for (int i = 0; i < 12; i++) {
     // std::cout << "month " << i << ": " << months[i]
     //          << " =? " << this->month << std::endl;
-    if (months[i] == this->month) {
+    if (toLower(months[i]) == toLower(this->month)) {
       this->doy = daysSinceNewYear + this->day;
       // std::cout << "dsny: " << daysSinceNewYear << std::endl;
       return;
@@ -44,4 +44,13 @@ void DayOfYear::print() {
     std::cout << this->month << " " << this->day << " would be "
               << " " << this->doy << std::endl;
   }
+}
+
+std::string DayOfYear::toLower(std::basic_string<char> &s) {
+  std::stringstream ss;
+  for (std::basic_string<char>::iterator p = s.begin(); p != s.end(); ++p) {
+    ss << std::tolower(*p);
+  }
+
+  return ss.str();
 }

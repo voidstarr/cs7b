@@ -7,8 +7,10 @@ void option2();
 int main() {
   do {
     std::cout << "Enter an option: " << std::endl
-              << "1. Day of Year -> Month and Day" << std::endl
-              << "2. Month and Day -> Day of Year" << std::endl;
+              << "1: Day of Year -> Month and Day" << std::endl
+              << "2: Month and Day -> Day of Year" << std::endl
+              << "-1: Quit" << std::endl
+              << ">> ";
 
     int choice;
     std::cin >> choice;
@@ -17,6 +19,8 @@ int main() {
       option1();
     } else if (choice == 2) {
       option2();
+    } else if (choice < 0) {
+        break;
     } else {
       std::cout << "Invalid choice." << std::endl << std::endl;
     }
