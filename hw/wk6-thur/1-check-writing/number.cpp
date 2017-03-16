@@ -28,14 +28,11 @@ void Number::print() {
         output << lessThan20[digits[1]] << " " << hundred << " ";
     }
 
-    if (digits[2] == 1) {
-        if (digits[3] == 0) {
-            output << lessThan20[10];
-        } else if (digits[2] == 1) {
-            output << lessThan20[10 + digits[3]];
-        } else {
-            output << lessThan20[digits[2] + digits[3]];
-        }
+
+    if (digits[2] == 0 && digits[3] > 0) {
+                output << lessThan20[digits[3]];
+    } else if (digits[2] == 1) {
+        output << lessThan20[10 + digits[3]];
     } else if (digits[2] > 1) {
         output << tensPlace[digits[2] - 2];
         if (digits[3] > 0) {
