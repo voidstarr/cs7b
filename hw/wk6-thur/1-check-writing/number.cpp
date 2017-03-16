@@ -16,10 +16,6 @@ void Number::print() {
         i--;
     }
 
-    //for (i = 0; i < 4; i++) {
-    //    std::cout << i << ":" << digits[i] << " ";
-    //}
-
     std::cout << std::endl;
 
     std::stringstream output;
@@ -35,6 +31,8 @@ void Number::print() {
     if (digits[2] == 1) {
         if (digits[3] == 0) {
             output << lessThan20[10];
+        } else if (digits[2] == 1) {
+            output << lessThan20[10 + digits[3]];
         } else {
             output << lessThan20[digits[2] + digits[3]];
         }
