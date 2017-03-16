@@ -11,9 +11,9 @@ class Number {
         void print();
     private:
         int number;
-        static std::string lessThan20[];
-        static std::string tensPlace[];
-        static std::string hundred;
-        static std::string thousand;
+        const static std::string lessThan20[];
+        const static std::string tensPlace[];
+        const static std::string hundred;
+        const static std::string thousand;
 
 };

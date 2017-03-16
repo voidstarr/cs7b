@@ -1,10 +1,10 @@
 #include "number.h"
 
-std::string Number::lessThan20[] = {"zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve",
+const std::string Number::lessThan20[] = {"zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve",
                                 "thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
-std::string Number::tensPlace[] = {"twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety"};
-std::string Number::hundred = "hundred";
-std::string Number::thousand = "thousand";
+const std::string Number::tensPlace[] = {"twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety"};
+const std::string Number::hundred = "hundred";
+const std::string Number::thousand = "thousand";
 
 void Number::print() {
     int digits[4] = {0,0,0,0};
