@@ -8,7 +8,7 @@ std::string Number::thousand = "thousand";
 
 void Number::print() {
     int digits[4] = {0,0,0,0};
-    int num = number;
+    int num = this->number;
     int i = 3;
     while (num != 0) {
         digits[i] = num % 10;
