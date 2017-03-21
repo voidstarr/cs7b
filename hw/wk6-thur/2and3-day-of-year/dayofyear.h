@@ -50,12 +50,37 @@ public:
   static std::string months[];
   static int daysInMonth[];
 
+  DayOfYear-- operator{
+    doy--;
+    if (doy < 0)
+      doy = 0;
+    return *this;
+  }
+
   DayOfYear operator++(int i) {
+    DayOfYear temp = *this;
+    doy--;
+    if (doy < 0)
+      doy = 0;
+    return temp;
+  }
+
+  DayOfYear++ operator{
     doy++;
     if (doy >= 365)
       doy = 0;
     return *this;
   }
+
+  DayOfYear operator++(int i) {
+    DayOfYear temp = *this;
+    doy++;
+    if (doy >= 365)
+      doy = 0;
+    return temp;
+  }
+
+  
 
 private:
   bool monthAndDay;
