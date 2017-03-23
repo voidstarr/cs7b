@@ -28,8 +28,8 @@ void Employee::sortArr() {
 void Employee::printArr() {
   for (int i = 0; i < size; i++) {
     Employee e = arr[i];
-    std::cout << e.getEmplNum() << " " << e.getLastName() << " " << e.getFirstName()
-              << " " << e.getIncome() << std::endl;
+    std::cout << e.getEmplNum() << " " << e.getLastName() << " "
+              << e.getFirstName() << " " << e.getIncome() << std::endl;
   }
 }
 
@@ -57,15 +57,15 @@ void Employee::readFileToArr(const std::string fn) {
 
     ifs >> newSize;
     size = newSize;
-    
+
     std::cout << "nSize: " << newSize << std::endl;
-    
+
     Employee *newArr = new Employee[newSize];
     bool skip = true;
     while (std::getline(ifs, line) && ctr < newSize) {
       if (skip) {
-          skip = false;
-          continue;
+        skip = false;
+        continue;
       }
       std::istringstream iss(line);
       iss >> n >> l >> f >> in;

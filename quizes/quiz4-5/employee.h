@@ -27,7 +27,6 @@ public:
   void readFileToArr(const std::string);
   void sortArr();
 
-
 private:
   Employee *arr = nullptr;
   int emplNum;
