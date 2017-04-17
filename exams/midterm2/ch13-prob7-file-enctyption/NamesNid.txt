@@ -1,0 +1,6 @@
+John 5
+Tom 6
+Jim 3
+Jane 4
+Jill 8
+Rob 2
