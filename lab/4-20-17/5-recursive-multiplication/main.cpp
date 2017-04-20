@@ -15,5 +15,8 @@ int main () {
 int multiply (int x, int y) {
     if (x == 0)
         return 0;
-    return y + multiply(x-1, y);
+    if (x > 0)
+        return y + multiply(x-1, y);
+    else
+        return -multiply(-x, y);
 }
