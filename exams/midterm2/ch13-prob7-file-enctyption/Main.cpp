@@ -2,6 +2,8 @@
 *************************************************************************************************************
 	Chapter 13 problem number seven, file encryption. Program reads input from a file,  encrypts it,
 	and writes it to another file.
+    Author: Austin Baker
+    Group 2
 *************************************************************************************************************
 */
 #include<iostream>

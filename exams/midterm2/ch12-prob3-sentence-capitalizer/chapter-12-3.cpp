@@ -3,7 +3,6 @@
 // accepts a C-String as an argument and capitalizes the first character 
 // of each sentence in the string.
 
-#include "stdafx.h"
 #include <iostream>
 #include <cstring>
 #include <string>

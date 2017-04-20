@@ -1,5 +1,6 @@
 /*
- * Group 2
+ * Midterm2 - Group 2
+ * Author: Patrick Jacobs
  *
  * Chapter 12 Problem 17
  * 

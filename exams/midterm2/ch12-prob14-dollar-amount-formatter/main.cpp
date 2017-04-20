@@ -1,15 +1,16 @@
 /*
  * Midterm 2 - Group 2
+ * Author: Patrick Jacobs
  *
  * Chapter 12 Problem 14
  *
  * create a function that takes a double and returns a formatted string
- * 
+ *
  * The code added is str::string dollarFormat(double)
  *
  * */
 
-#include <iostream> 
+#include <iostream>
 #include <string>
 #include <sstream>
 #include <iomanip>
@@ -28,9 +29,9 @@ int main() {
     std::cout << "Enter another amount in the form nnnnn.nn : ";
     std::cin >> in;
 
-    std::cout << "Formatted amount:   " << dollarFormat(input) << std::endl;
+    std::cout << "<string> Formatted amount:   " << dollarFormat(input) << std::endl;
     // output our formatted string
-    std::cout << "Formatted amount:   " << dollarFormat(in) << std::endl;
+    std::cout << "<double> Formatted amount:   " << dollarFormat(in) << std::endl;
     return 0;
 }
 
