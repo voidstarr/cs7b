@@ -10,7 +10,7 @@ int main() {
     test.push_back(75);
     test.print();
     std::cout << std::endl << std::endl;
-    test.pop_back();
+    std::cout << "pop_back" << test.pop_back() << std::endl;
     test.print();
     return 0;
 }

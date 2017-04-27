@@ -22,7 +22,7 @@ public:
   T &operator[](int);
   void print() const;
   void push_back(T);
-  void pop_back();
+  T pop_back();
 };
 
 template <class T> SimpleVector<T>::SimpleVector(int s) {
@@ -52,6 +52,40 @@ template <class T> void SimpleVector<T>::print() const {
 }
 
 template <class T> void SimpleVector<T>::push_back(T el) {
+    unique_ptr<T[]> temp = make_unique<T[]>(arraySize + 1);
+
+    for (int i = 0; i < arraySize; i++){
+        temp[i] = aptr[i];
+    }
+    temp[arraySize] = el;
+    if (arraySize > 0)
+        aptr.reset();
+    aptr = move(temp);
+    arraySize++;
+    for (int i = 0; i < arraySize; i++) {
+        cout << "aptr after move i=" << i << " : " << aptr[i] << endl;
+    }
+}
+
+template <class T> T SimpleVector<T>::pop_back() {
+    if (arraySize <= 0)
+        throw "Nothing to pop back!";
+
+    unique_ptr<T[]> temp = make_unique<T[]>(arraySize - 1);
+
+    for (int i = 0; i < arraySize -1; i++)
+        temp[i] = aptr[i];
+    T eVal = aptr[arraySize - 1];
+    arraySize--;
+    aptr.reset();
+    aptr = move(temp);
+    return eVal;
+
+
+}
+
+/*
+template <class T> void SimpleVector<T>::push_back(T el) {
   T def = T();
   for (int i = 0; i < arraySize; i++) {
     if (aptr[i] == def) {
@@ -62,6 +96,7 @@ template <class T> void SimpleVector<T>::push_back(T el) {
   throw out_of_range("SimpleVector full!");
 }
 
+
 template <class T> void SimpleVector<T>::pop_back() {
   T def = T();
   for (int i = arraySize-1; i > 0; i--) {
@@ -71,3 +106,4 @@ template <class T> void SimpleVector<T>::pop_back() {
     }
   }
 }
+*/
