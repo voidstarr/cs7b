@@ -1,0 +1,12 @@
+Stack LIFO datastructure
+        |-> last inn-first out
+
+static  dynamic
+  |        |
+  v        v
+array  linked list
+
+operations of a stack       member functions
+push();                        size();
+pop();                         top
+                               stackArray
