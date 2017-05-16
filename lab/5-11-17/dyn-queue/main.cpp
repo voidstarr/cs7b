@@ -1,16 +1,19 @@
 #include <iostream>
 
+template <class T>
 class QNode {
+
+template <class K>
 friend class MyQueue;
 private:
-    QNode *next;
-    int value;
+    QNode<T> *next;
+    T value;
 public:
-    QNode(int value, QNode *next) {
+    QNode(T value, QNode *next) {
         this->next = next;
         this->value = value;
     }
-    QNode(int value){
+    QNode(T value){
         this->value = value;
         this->next = nullptr;
     }
@@ -20,33 +23,37 @@ public:
     }
 };
 
+template <class T>
 class MyQueue {
 private:
-    QNode *front;
-    QNode *rear;
+    QNode<T> *front;
+    QNode<T> *rear;
 
 public:
     MyQueue();
     ~MyQueue();
     
-    void enqueue(int);
-    int dequeue();
+    void enqueue(T);
+    T dequeue();
     bool isEmpty() const {return front == nullptr;}
     void print();
 
 };
 
-MyQueue::~MyQueue() {
+template <class T>
+MyQueue<T>::~MyQueue() {
     delete front;
 }
 
-MyQueue::MyQueue() {
+template <class T>
+MyQueue<T>::MyQueue() {
     front = nullptr;
     rear = nullptr;
 }
 
-void MyQueue::enqueue(int e) {
-    QNode *tmp = new QNode(e);
+template <class T>
+void MyQueue<T>::enqueue(T e) {
+    QNode<T> *tmp = new QNode<T>(e);
     if (isEmpty()) {
         front = rear = tmp;
     } else {
@@ -55,13 +62,15 @@ void MyQueue::enqueue(int e) {
     }
 }
 
-int MyQueue::dequeue() {
+template <class T>
+T MyQueue<T>::dequeue() {
     if(isEmpty()){
         std::cout << "Nothing to dequeue. exiting." << std::endl;
         exit(1);
     }
 
-    QNode *tmp = front;
+    QNode<T> *tmp = front;
+    T ret = front->value;
     if (front == rear) {
         front = rear = nullptr;
     } else {
@@ -71,11 +80,12 @@ int MyQueue::dequeue() {
     tmp->next = nullptr;
     delete tmp;
 
-    return tmp->value;
+    return ret;
 }
 
-void MyQueue::print() {
-    QNode *tmp = front;
+template <class T>
+void MyQueue<T>::print() {
+    QNode<T> *tmp = front;
     while (tmp != nullptr) {
         std::cout << tmp->value << " ";
     }
@@ -84,7 +94,7 @@ void MyQueue::print() {
 }
 
 int main() {
-    MyQueue q;
+    MyQueue<long> q;
     q.enqueue(4);
     q.enqueue(443);
     q.enqueue(74);
@@ -99,5 +109,7 @@ int main() {
     std::cout << q.dequeue() << std::endl;
     std::cout << q.dequeue() << std::endl;
     std::cout << q.dequeue() << std::endl;
+    std::cout << q.dequeue() << std::endl;
+    
     return 0;
 }
